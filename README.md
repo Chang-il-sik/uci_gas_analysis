@@ -39,7 +39,7 @@ zo : stands for zero-offset subtraction.
 
 The trained result is saved in the uci_gas_analysis/saved_cv folder.
 
-## Generate maximum output of the trained model
+## The maximum result among the trained models is saved as a csv file.
     sh script/model_best_L_all_run.sh
     sh script/model_best_L_n_n_run.sh
     sh script/model_best_L_cnn_run.sh
