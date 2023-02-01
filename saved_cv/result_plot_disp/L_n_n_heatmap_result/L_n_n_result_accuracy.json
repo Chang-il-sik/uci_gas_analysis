@@ -1,0 +1,6 @@
+{
+    "brnn_att-SoftmaxLoss": 0.59,
+    "brnn_att-cosface": 0.53,
+    "bi_tcn-SoftmaxLoss": 0.87,
+    "bi_tcn-cosface": 0.85
+}

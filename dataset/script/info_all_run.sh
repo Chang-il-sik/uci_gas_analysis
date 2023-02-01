@@ -1,0 +1,3 @@
+sh update_info_all.sh
+sh L_n_n_info_result_plot_disp.sh
+sh L_n_n_info_gaussian_plot_disp.sh

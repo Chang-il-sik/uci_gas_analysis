@@ -1,0 +1,117 @@
+{
+    "name": "UCI_GAS",
+    "data": {
+        "type": "Gas_Sensor_DataManager",
+        "path": "../dataset/sensor_npz_zo/sensor_L5_2",
+        "name": "sensor_L5_2",
+        "loader": {
+            "shuffle": true,
+            "batch_size": 1024
+        },
+        "imbalance": "none",
+        "feature_num": 8,
+        "start": 140,
+        "end": 200,
+        "length": 20,
+        "split": true
+    },
+    "transforms": {
+        "type": "SensorTransforms",
+        "args": {
+            "noise": [
+                0.0,
+                0.05
+            ]
+        }
+    },
+    "optimizer": {
+        "type": "Adam",
+        "args": {
+            "lr": 0.002,
+            "weight_decay": 0.01,
+            "amsgrad": true
+        }
+    },
+    "lr_scheduler": {
+        "type": "StepLR",
+        "args": {
+            "step_size": 10,
+            "gamma": 0.5
+        }
+    },
+    "model": {
+        "tcn": {
+            "dropout": 0.1,
+            "ksize": 5,
+            "levels": 8,
+            "nhid": 25
+        },
+        "rnn": {
+            "n_layers": 2,
+            "hidden_dim": 64
+        },
+        "crnn": {
+            "n_layers": 2,
+            "hidden_dim": 64
+        },
+        "dialated_conv": {
+            "output_dims": 128,
+            "hidden_dims": 64,
+            "depth": 4
+        }
+    },
+    "train": {
+        "loss": "NllLoss",
+        "NllLoss_args": {
+            "weight": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "FocalLoss_args": {
+            "weight": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "gamma": 2
+        },
+        "LabelSmoothingLoss_args": {
+            "weight": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "smoothing": 0.1
+        },
+        "MetricLoss_arg": {
+            "dist_type": "l2"
+        },
+        "epochs": 50,
+        "save_dir": "../saved_cv/L_n_n_zo_result",
+        "save_p": 1,
+        "early_stop": 10,
+        "clip": -1
+    },
+    "class_num": 8,
+    "method": "sp_bi_dir",
+    "log_interval": 50,
+    "cuda": true,
+    "parallel": false
+}
