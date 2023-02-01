@@ -2,13 +2,13 @@
 UCI Gas sensor arrays in open sampling settings Data Set Analysis
 
 ## Dataset preparation
-http://archive.ics.uci.edu/ml/datasets/gas+sensor+arrays+in+open+sampling+settings
+http://archive.ics.uci.edu/ml/datasets/gas+sensor+arrays+in+open+sampling+settings   
 Dataset is created as an npy file in 1 second increments without considering heater and fan speed
 
-Capacity when created with sensor_npz.tar.gz: 15G
-Capacity when created with sensor_npz_zo.tar.gz: 15G
+Capacity when created with sensor_npz.tar.gz: 15G   
+Capacity when created with sensor_npz_zo.tar.gz: 15G   
 
-You need to create a dataset and put it in uci_gas_analysis/dataset/sensor_npz and uci_gas_analysis/dataset/sensor_npz_zo.
+You need to create a dataset and put it in uci_gas_analysis/dataset/sensor_npz and uci_gas_analysis/dataset/sensor_npz_zo.   
 
 ## Setup
     git clone https://github.com/Chang-il-sik/uci_gas_analysis.git
