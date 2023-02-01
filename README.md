@@ -56,7 +56,7 @@ The trained result is saved in the uci_gas_analysis/saved_cv folder.
     sh script/ood_L_n_run.sh
     sh script/ood_L_n_zo_run.sh
 
-## change folder location
+## hange folder location
     cd uci_gas_analysis/saved_cv/result_plot_disp
 
 ## Plot the results for the the trained model
